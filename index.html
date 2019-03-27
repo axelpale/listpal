@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>List Pal</title>
+	<link rel="stylesheet" href="style.css">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body id="home">
+
+	<h1>List Pal</h1>
+
+  <p>This bot speaks a line in your list aloud and then waits for you to say <strong>"next"</strong> or <strong>"okay"</strong> before speaking the next line. Begin by pressing "Start talk" button.</p>
+
+  <p>Google Chrome 72 or greater is required. Also ensure both your microfone and speakers are working.</p>
+
+  <p>
+    <strong>next, okay</strong> - say the next line<br>
+    <strong>again, repeat</strong> - say the line again<br>
+    <strong>back</strong> - say the previous line<br>
+  </p>
+
+  <p>
+    Paste your list here:
+  </p>
+  <textarea id="listBox" rows="10">
+1.8
+2.8
+4.3</textarea>
+
+  <div class="output"></div>
+
+  <button id="start-button">Start talk</button>
+
+  <script src="index.js"></script>
+</body>
+</html>
