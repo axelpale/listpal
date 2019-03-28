@@ -66,7 +66,7 @@ recognition.onresult = function(event) {
   // Clean up
   words = words.map(w => w.trim())
 
-  diagnostic.textContent = 'Result received: ' + words.toString();
+  diagnostic.textContent = 'I heard: ' + words.toString();
   console.log(words)
   //if (words.indexOf('okay') !== -1 || words.indexOf('next' !== -1)) {
   if (hasAny(words, ['okay', 'next'])) {
