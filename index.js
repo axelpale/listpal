@@ -1,9 +1,11 @@
 //
 // Resources:
-// - https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
-// - https://stackoverflow.com/questions/33943150/webkitspeechgrammarlist-really-works
-// - https://stackoverflow.com/questions/45574101/chrome-version-60-speechrecognition
-// - https://stiltsoft.com/blog/2013/05/google-chrome-how-to-use-the-web-speech-api/
+// - Speech synthesis https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
+// - Usage https://stackoverflow.com/questions/33943150/webkitspeechgrammarlist-really-works
+// - Usage https://stackoverflow.com/questions/45574101/chrome-version-60-speechrecognition
+// - Usage https://stiltsoft.com/blog/2013/05/google-chrome-how-to-use-the-web-speech-api/
+// - Firefox limitations: https://stackoverflow.com/questions/39784986/speechrecognition-is-not-working-in-firefox
+//
 
 window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 
