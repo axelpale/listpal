@@ -17,15 +17,21 @@ recognition.maxAlternatives = 3;
 
 var synth = window.speechSynthesis;
 var voices = synth.getVoices();
+var voice = voices[0]
 
 var diagnostic = document.querySelector('.output');
 var bg = document.querySelector('html');
 var listBox = document.querySelector('#listBox')
 
-var speak = (word) => {
+var speak = (word, cb) => {
   var utterThis = new SpeechSynthesisUtterance(word);
-  utterThis.voice = voices[0]
+  utterThis.voice = voice
+  utterThis.rate = 0.75 // speed
+  utterThis.volume = 0.75
   synth.speak(utterThis);
+
+  if (typeof cb !== 'function') cb = () => {}
+  utterThis.onend = cb
 }
 
 var hasAny = (list, words) => {
@@ -44,10 +50,10 @@ document.querySelector('#start-button').onclick = function() {
     .map(w => w.replace(/\.,$/, ''))
   console.log('List analyzed:', list)
 
-  speak('Hello. Say "o-kay" and I will speak the first line.')
-
-  recognition.start();
-  console.log('Listening...');
+  speak('Hello. Say okay and I will speak the first line.', function () {
+    recognition.start();
+    console.log('Listening...');
+  })
 }
 
 var listIndex = -1;
@@ -70,11 +76,9 @@ recognition.onresult = function(event) {
       let listItem = list[listIndex]
       speak(listItem)
     } else {
-      setTimeout(() => {
-        speak('List has ended.')
-      }, 500)
-
       recognition.stop();
+      speak('List has ended. I will stop listening.')
+
       return;
     }
   } else if (hasAny(words, ['again', 'repeat'])) {
