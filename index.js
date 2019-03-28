@@ -86,7 +86,7 @@ recognition.onresult = function(event) {
       let listItem = list[listIndex]
       speak(listItem)
     }
-  } else if (hasAny(words, ['back'])) {
+  } else if (hasAny(words, ['back', 'previous'])) {
     listIndex = Math.max(0, listIndex - 1)
     speak(list[listIndex])
   } else if (hasAny(words, ['stop'])) {
