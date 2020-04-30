@@ -7,6 +7,8 @@
 // - Firefox limitations: https://stackoverflow.com/questions/39784986/speechrecognition-is-not-working-in-firefox
 //
 
+const VOCABULARY_FOR_NEXT = ['ok', 'okay', 'next', 'nixed', 'text', 'rick', 'nick']
+
 window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 
 var recognition = new window.SpeechRecognition();

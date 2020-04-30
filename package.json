@@ -16,8 +16,7 @@
     "url": "git://github.com/axelpale/listpal.git"
   },
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "standard": "*"
   },
